@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profitability Analysis Dashboard — Matthew Still</title>
+<link rel="icon" href="../../favicon.ico">
+<style>/* same styles as main */*{box-sizing:border-box}:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
+html,body{margin:0;padding:0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px}
+.navbar{position:sticky;top:0;background:#0b1220cc;border-bottom:1px solid #233045}
+.navbar .inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand{font-weight:700;font-size:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:var(--text)}
+.grid{display:grid;gap:16px}.card{background:var(--card);border:1px solid #233045;border-radius:16px;padding:24px}
+h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(--muted);margin:8px 0}
+.section{margin-top:32px}.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
+.footer{font-size:14px;color:var(--muted);padding:24px 0}
+</style>
+</head><body>
+<div class="navbar"><div class="inner">
+  <a class="brand" href="/">← Matthew Still</a>
+  <a class="btn" href="/">Back to Portfolio</a>
+</div></div>
+
+<main class="container">
+  <section class="card">
+    <h1>Profitability Analysis Dashboard</h1>
+    <p>Power BI · KPIs · DAX | 2025</p>
+    <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span></div>
+    <p>Goal: analyze sales, COGS, and profit by segment and product. Outcome: identified unprofitable Enterprise segment and recommended actions.</p>
+  </section>
+
+  <section class="section card" style="height:720px">
+    <h2>Interactive Report</h2>
+    <!-- Replace SRC with your Power BI or Tableau Public link -->
+    <iframe title="Profitability report" src="https://app.powerbi.com/view?r=YOUR_TOKEN" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section class="section grid">
+    <div class="card">
+      <h2>Screenshots</h2>
+      <p>Add images to this folder and link them:</p>
+      <p><img src="profitability_1.png" alt="Overview" style="max-width:100%;border-radius:10px"></p>
+      <p><img src="profitability_2.png" alt="Product view" style="max-width:100%;border-radius:10px"></p>
+    </div>
+    <div class="card">
+      <h2>Download</h2>
+      <p><a href="Profitability_Dashboard.pbix" download>Download .pbix</a></p>
+      <p><a href="profitability_summary.pdf" download>One-pager PDF</a></p>
+    </div>
+  </section>
+
+  <div class="footer">© <script>document.write(new Date().getFullYear())</script> Matthew Still</div>
+</main>
+</body></html>
