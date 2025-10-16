@@ -2,7 +2,9 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Profitability Analysis Dashboard — Matthew Still</title>
 <link rel="icon" href="../../favicon.ico">
-<style>/* same styles as main */*{box-sizing:border-box}:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
 html,body{margin:0;padding:0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
 .container{max-width:1100px;margin:0 auto;padding:32px 20px}
@@ -10,9 +12,15 @@ a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
 .navbar .inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
 .brand{font-weight:700;font-size:18px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:var(--text)}
-.grid{display:grid;gap:16px}.card{background:var(--card);border:1px solid #233045;border-radius:16px;padding:24px}
+.card{background:var(--card);border:1px solid #233045;border-radius:16px;padding:24px}
+.grid{display:grid;gap:16px}
+.section{margin-top:32px}
 h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(--muted);margin:8px 0}
-.section{margin-top:32px}.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
+.gallery{grid-template-columns:repeat(12,minmax(0,1fr))}
+.gallery .shot{grid-column:span 6}
+.gallery img{width:100%;border-radius:10px;display:block}
+@media (max-width:900px){.gallery .shot{grid-column:span 12}}
 .footer{font-size:14px;color:var(--muted);padding:24px 0}
 </style>
 </head><body>
@@ -26,29 +34,32 @@ h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(-
     <h1>Profitability Analysis Dashboard</h1>
     <p>Power BI · KPIs · DAX | 2025</p>
     <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span></div>
-    <p>Goal: analyze sales, COGS, and profit by segment and product. Outcome: identified unprofitable Enterprise segment and recommended actions.</p>
+    <p>This page displays static images of each tab in the Power BI report. Each tab focuses on a different aspect of profitability analysis.</p>
   </section>
 
-  <section class="section card" style="height:720px">
-    <h2>Interactive Report</h2>
-    <!-- Replace SRC with your Power BI or Tableau Public link -->
-    <iframe title="Profitability report" src="https://app.powerbi.com/view?r=YOUR_TOKEN" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-  </section>
+  <section class="section grid gallery">
+    <article class="card shot">
+      <h3>Tab 1 — Overview</h3>
+      <img src="SA2_Image1.jpg" alt="Profitability Overview">
+    </article>
 
-  <section class="section grid">
-    <div class="card">
-      <h2>Screenshots</h2>
-      <p>Add images to this folder and link them:</p>
-      <p><img src="profitability_1.png" alt="Overview" style="max-width:100%;border-radius:10px"></p>
-      <p><img src="profitability_2.png" alt="Product view" style="max-width:100%;border-radius:10px"></p>
-    </div>
-    <div class="card">
-      <h2>Download</h2>
-      <p><a href="Profitability_Dashboard.pbix" download>Download .pbix</a></p>
-      <p><a href="profitability_summary.pdf" download>One-pager PDF</a></p>
-    </div>
+    <article class="card shot">
+      <h3>Tab 2 — Sales Performance</h3>
+      <img src="SA2_Image2.jpg" alt="Sales Performance">
+    </article>
+
+    <article class="card shot">
+      <h3>Tab 3 — Cost Breakdown</h3>
+      <img src="SA2_Image3.jpg" alt="Cost Breakdown">
+    </article>
+
+    <article class="card shot">
+      <h3>Tab 4 — Summary & Insights</h3>
+      <img src="SA2_Image4.jpg" alt="Summary and Insights">
+    </article>
   </section>
 
   <div class="footer">© <script>document.write(new Date().getFullYear())</script> Matthew Still</div>
 </main>
 </body></html>
+
