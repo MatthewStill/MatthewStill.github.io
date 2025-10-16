@@ -1,197 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Portfolio</title>
-  <meta name="description" content="Portfolio website showcasing resume, projects, and contact information." />
-  <meta name="color-scheme" content="light dark" />
-  <style>
-    :root{
-      --bg: #0b0d10; --card:#12161b; --muted:#9aa4b2; --text:#e5ecf4; --brand:#5ac8fa;
-      --lightbg:#f7f9fc; --lightcard:#ffffff; --lighttext:#0f1720; --lightmuted:#475569;
-    }
-    @media (prefers-color-scheme: light){
-      :root{ --bg: var(--lightbg); --card: var(--lightcard); --text: var(--lighttext); --muted: var(--lightmuted); }
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background:var(--bg);}
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px; margin:0 auto; padding:32px 20px}
-    .navbar{display:flex; align-items:center; justify-content:space-between; gap:16px; position:sticky; top:0; backdrop-filter:saturate(140%) blur(8px); background:color-mix(in oklab, var(--bg), transparent 70%); border-bottom:1px solid color-mix(in oklab, var(--text), transparent 90%);}
-    .brand{font-weight:700; letter-spacing:.2px}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid color-mix(in oklab, var(--text), transparent 82%); color:var(--text); background:color-mix(in oklab, var(--card), transparent 10%);}
-    .btn:hover{transform:translateY(-1px)}
-    .grid{display:grid; gap:16px}
-    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding-top:32px}
-    .card{background:var(--card); border:1px solid color-mix(in oklab, var(--text), transparent 88%); border-radius:20px; padding:24px}
-    .kpis{display:flex; gap:12px; flex-wrap:wrap}
-    .kpi{padding:10px 14px; border-radius:999px; background:color-mix(in oklab, var(--brand), transparent 85%); border:1px solid color-mix(in oklab, var(--brand), transparent 60%); color:var(--text)}
-    h1{font-size:42px; line-height:1.1; margin:0 0 10px}
-    h2{font-size:24px; margin:0 0 10px}
-    p{color:var(--muted); margin:8px 0}
-    .section{margin-top:40px}
-    .projects{grid-template-columns:repeat(12,minmax(0,1fr))}
-    .project{grid-column:span 6; display:flex; flex-direction:column; gap:10px}
-    .project h3{margin:6px 0 0}
-    .project .meta{font-size:14px; color:var(--muted)}
-    .project .tags{display:flex; flex-wrap:wrap; gap:8px}
-    .tag{font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid color-mix(in oklab, var(--text), transparent 80%)}
-    .resume-grid{grid-template-columns:1fr 2fr; gap:20px}
-    .list{display:flex; flex-direction:column; gap:12px}
-    .item h4{margin:0}
-    .item .sub{color:var(--muted); font-size:14px}
-    .footer{font-size:14px; color:var(--muted); padding:24px 0}
-    .avatar{width:140px; height:140px; border-radius:20px; background:linear-gradient(120deg, color-mix(in oklab, var(--brand), transparent 60%), transparent), color-mix(in oklab, var(--text), transparent 90%); border:1px dashed color-mix(in oklab, var(--text), transparent 80%); display:flex; align-items:center; justify-content:center; color:var(--muted)}
-    .contact{display:flex; gap:10px; flex-wrap:wrap}
-    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .resume-grid{grid-template-columns:1fr}
-      .project{grid-column:span 12}
-    }
-    /* Print-friendly resume view */
-    @media print{
-      .navbar, .contact, .footer, .btn { display:none !important }
-      body{background:#fff; color:#111}
-      .card{border:0; padding:0}
-      .container{padding:0}
-    }
-  </style>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🗂️</text></svg>">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Your Name",
-    "url": "http://localhost:8000",
-    "sameAs": ["https://www.linkedin.com/in/your-handle"],
-    "jobTitle": "Business Analyst",
-    "worksFor": {"@type":"Organization","name":"Your Company"}
-  }
-  </script>
-</head>
-<body>
-  <!-- Nav -->
-  <div class="navbar">
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
-      <div class="brand">Your Name</div>
-      <div class="contact">
-        <a class="btn" href="mailto:you@example.com">Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="resume.pdf" download>Download Résumé</a>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+<div class="card" style="display:flex; gap:16px; align-items:center; justify-content:center;">
+<div class="avatar">Headshot</div>
+<div>
+<h2>Based in Houston, TX</h2>
+<p>Open to: Remote · Hybrid · On‑site</p>
+<p class="sr-only">Accessibility: photo placeholder</p>
+</div>
+</div>
+</section>
 
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero section">
-      <div class="card">
-        <h1>Business Analyst & Operations | Data‑Driven Problem Solver</h1>
-        <p>Concise value proposition in one or two sentences. Mention strongest tools, industries, and the outcomes you deliver.</p>
-        <div class="kpis" aria-label="Key achievements">
-          <div class="kpi">$XMM budgets tracked</div>
-          <div class="kpi">Y% DSO reduction</div>
-          <div class="kpi">Z dashboards shipped</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex; gap:16px; align-items:center; justify-content:center;">
-        <div class="avatar">Add headshot</div>
-        <div>
-          <h2>Based in City, State</h2>
-          <p>Open to: Remote · Hybrid · On‑site</p>
-          <p class="sr-only">Accessibility: photo placeholder</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Projects -->
-    <section class="section">
-      <h2>Selected Projects</h2>
-      <p>Show 3–6 high‑impact items. Link to repos, articles, or demos. Quantify results.</p>
-      <div class="grid projects">
-        <article class="card project">
-          <div>
-            <h3><a href="#" target="_blank" rel="noopener">Project A — ROI Model</a></h3>
-            <div class="meta">Power BI · SQL · Excel | 2025</div>
-            <p>What the tool solved, who used it, and the measurable impact (e.g., cut cycle time 18%).</p>
-          </div>
-          <div class="tags">
-            <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Finance</span>
-          </div>
-        </article>
-        <article class="card project">
-          <div>
-            <h3><a href="#" target="_blank" rel="noopener">Project B — Logistics KPI Suite</a></h3>
-            <div class="meta">Tableau · Python | 2025</div>
-            <p>Brief description and 1 metric that proves value.</p>
-          </div>
-          <div class="tags">
-            <span class="tag">Tableau</span><span class="tag">ETL</span><span class="tag">Ops</span>
-          </div>
-        </article>
-        <article class="card project">
-          <div>
-            <h3><a href="#" target="_blank" rel="noopener">Project C — Forecasting</a></h3>
-            <div class="meta">Python · scikit‑learn | 2024</div>
-            <p>What you predicted and the accuracy/error improvement.</p>
-          </div>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">ML</span><span class="tag">Time Series</span>
-          </div>
-        </article>
-      </div>
-    </section>
+<!-- Projects -->
+<section class="section">
+<h2>Selected Projects</h2>
+<p>Three concise case studies. Links optional.</p>
+<div class="grid projects">
+<article class="card project">
+<div>
+<h3><a href="#" target="_blank" rel="noopener">Profitability Analysis Dashboard</a></h3>
+<div class="meta">Power BI · KPIs · DAX | 2025</div>
+<p>Built interactive dashboard to analyze sales, COGS, and profit by segment and product. Flagged Enterprise segment as consistently unprofitable and recommended cost/resource changes.</p>
+</div>
+<div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span></div>
+</article>
+<article class="card project">
+<div>
+<h3><a href="#" target="_blank" rel="noopener">CoolCrème Plant‑Based Ice Cream Launch</a></h3>
+<div class="meta">Tableau · Power BI | 2025</div>
+<p>Led a team of four analyzing survey data to model pricing and feature preferences. Built dashboards for demand elasticity and sentiment. Delivered go‑to‑market recommendations.</p>
+</div>
+<div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Market Analysis</span></div>
+</article>
+<article class="card project">
+<div>
+<h3><a href="#" target="_blank" rel="noopener">Store Ops Cost Reduction</a></h3>
+<div class="meta">Excel · SQL (concepts) | 2024</div>
+<p>Analyzed labor, supply, and inventory data using Excel and POS reports to identify inefficiencies and reduce op<!-- Resume snapshot -->
+<section class="section">
+<h2>Experience</h2>
+<div class="grid resume-grid">
+<div class="list">
+<div class="item">
+<h4>Starbucks — Shift Supervisor <span class="sub">(Mar 2022–Present)</span></h4>
+<p class="sub">Houston, TX</p>
+<ul>
+<li>Directed a 30‑member team across scheduling, training, and performance. Supported smooth daily operations averaging ~$12K in revenue per day.</li>
+<li>Used Excel and POS reporting to analyze labor, supply, and inventory. Identified inefficiencies and reduced operating costs by 12%.</li>
+<li>Maintained documentation and compliance for audits and inspections. Led regular staff training to uphold quality.</li>
+<li>Forecasted staffing and inventory against trends, promos, and seasonality. Adjusted deployment for peak hours.</li>
+</ul>
+</div>
+<div class="item">
+<h4>Starbucks — Barista Trainer <span class="sub">(Aug 2021–Feb 2022)</span></h4>
+<p class="sub">Houston, TX</p>
+<ul>
+<li>Onboarded and coached new baristas on standards, beverage prep, and customer service, improving speed and consistency.</li>
+</ul>
+</div>
+<div class="item">
+<h4>Starbucks — Barista <span class="sub">(Aug 2018–Jul 2021)</span></h4>
+<p class="sub">Houston, TX</p>
+<ul>
+<li>Produced high‑volume orders with accuracy and speed while maintaining service quality.</li>
+</ul>
+</div>
+</div>
+<div class="card">
+<h3>Skills</h3>
+<p>Excel (PivotTables, VLOOKUP, What‑If, VBA basics) · Power BI (Dashboards, KPIs, DAX) · Tableau · SQL · Python · Java · C · Data Modeling · Forecasting · KPI Design · Internal Controls · Process Improvement</p>
+<h3>Education</h3>
+<p>Arizona State University — B.A. Business Administration, Magna Cum Laude, GPA 3.77</p>
+<h3>Certifications</h3>
+<p>Applied Business Data Analytics (ASU), GPA 3.94</p>
+<h3>Download</h3>
+<p><a href="resume.pdf" download>Résumé (PDF)</a></p>
+</div>
+</div>
+</section>
 
-    <!-- Resume snapshot -->
-    <section class="section">
-      <h2>Experience</h2>
-      <div class="grid resume-grid">
-        <div class="list">
-          <div class="item">
-            <h4>Company — Role <span class="sub">(YYYY–YYYY)</span></h4>
-            <p class="sub">City, State</p>
-            <ul>
-              <li>Led X, resulting in Y (quantified).</li>
-              <li>Built Z, used by N users, reducing T by %.</li>
-              <li>Owned A to B processes across C stakeholders.</li>
-            </ul>
-          </div>
-          <div class="item">
-            <h4>Company — Role <span class="sub">(YYYY–YYYY)</span></h4>
-            <p class="sub">City, State</p>
-            <ul>
-              <li>Delivered metric‑driven improvement with tool/tech.</li>
-              <li>Automated report X saving N hours per week.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Skills</h3>
-          <p>SQL · Power BI · Tableau · Excel · Python · Java · C · Data Modeling · ETL · Forecasting · KPI Design · Stakeholder Comms</p>
-          <h3>Education</h3>
-          <p>B.A. Business Administration, Applied Business Data Analytics — Arizona State University, 2025</p>
-          <h3>Certifications</h3>
-          <p>List relevant certs</p>
-          <h3>Download</h3>
-          <p><a href="resume.pdf" download>Résumé (PDF)</a></p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Contact -->
-    <section class="section card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a> · LinkedIn: <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">your-handle</a> · GitHub: <a href="https://github.com/yourhandle" target="_blank" rel="noopener">yourhandle</a></p>
-    </section>
+<!-- Contact --> — Arizona State University, 2025</p>
+<h3>Certifications</h3>
+<p>List relevant certs</p>
+<h3>Download</h3>
+<p><a href="resume.pdf" download>Résumé (PDF)</a></p>
+</div>
+</div>
+</section>
 
-    <div class="footer">© <span id="y"></span> Your Name. Built as a single static file for easy local hosting.</div>
-  </main>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<!-- Contact -->
+<section class="section card">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:matthewstilligb@gmail.com">you@example.com</a> · LinkedIn: <a href="https://www.linkedin.com/in/matthewsstill" target="_blank" rel="noopener">your-handle</a> · GitHub: <a href="https://github.com/yourhandle" target="_blank" rel="noopener">yourhandle</a></p>
+</section>
+
+
+<div class="footer">© <span id="y"></span> Matthew Still. Built as a single static file for easy local hosting.</div>
+</main>
+
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
