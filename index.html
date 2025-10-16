@@ -38,7 +38,15 @@
   .item h4{margin:0}
   .item .sub{color:var(--muted);font-size:14px}
   .footer{font-size:14px;color:var(--muted);padding:24px 0}
-  .avatar{width:120px;height:120px;border-radius:14px;background:#0b1220;border:1px dashed #334155;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+  .avatar{
+    width:140px;
+    height:auto;
+    border-radius:14px;
+    display:block;
+    object-fit:cover;
+    image-rendering:auto;
+  }
+
   .contact{display:flex;gap:10px;flex-wrap:wrap}
   @media (max-width: 900px){.hero{grid-template-columns:1fr}.resume-grid{grid-template-columns:1fr}.project{grid-column:span 12}}
   @media print{.navbar,.contact,.footer,.btn{display:none !important}body{background:#fff;color:#111}.card{border:0;padding:0}.container{padding:0}}
@@ -82,7 +90,7 @@
         </div>
       </div>
       <div class="card" style="display:flex; gap:16px; align-items:center; justify-content:center;">
-        <img src="headshot.PNG" alt="Matthew Still headshot" class="avatar" style="object-fit:cover; width:120px; height:120px;">
+        <img src="headshot.PNG" alt="Matthew Still headshot" class="avatar">
         <div>
           <h2>Based in Houston, TX</h2>
           <p>Open to: Remote · Hybrid · On‑site</p>
