@@ -1,16 +1,27 @@
 <!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sales Forecasting & Scenario Planning — Matthew Still</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildlife Strike Analysis (Power BI) — Matthew Still</title>
 <link rel="icon" href="../../favicon.ico">
 <style>
-*{box-sizing:border-box}:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
-html,body{margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+*{box-sizing:border-box}
+:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
+html,body{margin:0;padding:0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
 .container{max-width:1100px;margin:0 auto;padding:32px 20px}
 .nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #233045;padding:12px 0}
 .card{background:var(--card);border:1px solid #233045;border-radius:16px;padding:24px;margin-top:16px}
-h1{margin:0 0 8px}
-</style></head><body>
+.grid{display:grid;gap:16px}
+.gallery{grid-template-columns:repeat(12,minmax(0,1fr))}
+.shot{grid-column:span 6}
+@media(max-width:900px){.shot{grid-column:span 12}}
+img{width:100%;border-radius:12px;display:block;cursor:pointer;transition:transform .2s}
+img:hover{transform:scale(1.01)}
+/* Lightbox */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+#lightbox img{max-width:95%;max-height:95%;border-radius:12px}
+#close{position:fixed;top:16px;right:22px;font-size:32px;color:#fff;text-decoration:none}
+</style>
+</head><body>
 <main class="container">
   <div class="nav">
     <a href="/">← Back to Portfolio</a>
@@ -18,21 +29,42 @@ h1{margin:0 0 8px}
   </div>
 
   <section class="card">
-    <h1>Sales Forecasting & Scenario Planning</h1>
-    <p class="meta">Python · Excel | 2025</p>
-    <p>Placeholder. Brief overview of the problem, approach, and outcomes.</p>
+    <h1>Wildlife Strike Analysis (Power BI)</h1>
+    <p class="meta">Two themed pages: <em>Location & Frequency</em> and <em>Cost & Damage</em>. Each page includes a map plus supporting visuals, per assignment spec (≥2 pages, map on each, 4+ visuals per page). :contentReference[oaicite:0]{index=0}</p>
+    <p>Below are static previews. Click any image to zoom. Optional: include the PDF brief for context.</p>
+    <p><a href="assignment.pdf" target="_blank" rel="noopener">View project brief (PDF)</a></p>
   </section>
 
-  <section class="card"><h2>Highlights</h2>
+  <section class="grid gallery">
+    <article class="card shot">
+      <h2>Page 1 — Location & Frequency</h2>
+      <a href="#" id="img1"><img src="wildlife1.png" alt="Wildlife Strike — Location & Frequency"></a>
+    </article>
+    <article class="card shot">
+      <h2>Page 2 — Cost & Damage</h2>
+      <a href="#" id="img2"><img src="wildlife2.png" alt="Wildlife Strike — Cost & Damage"></a>
+    </article>
+  </section>
+
+  <section class="card">
+    <h2>Key Takeaways</h2>
     <ul>
-      <li>Time-series forecast for weekly sales.</li>
-      <li>What-if scenarios for promo and staffing.</li>
-      <li>KPIs: MAPE, service level, inventory turns.</li>
+      <li>Strikes cluster in large-traffic states and are heavily daytime/bird-driven.</li>
+      <li>Costs are concentrated at a few airports; overall damage incidents are a small share of strikes.</li>
+      <li>Trendline shows year-over-year variability with long-run moderation of total costs.</li>
     </ul>
   </section>
-
-  <section class="card"><h2>Gallery</h2>
-    <p>Add images here: <code>forecast_1.png</code>, <code>forecast_2.png</code>, etc.</p>
-  </section>
 </main>
+
+<!-- Lightbox -->
+<div id="lightbox"><a id="close" href="#">×</a><img id="lbimg" alt=""></div>
+<script>
+const lb=document.getElementById('lightbox'), img=document.getElementById('lbimg');
+document.querySelectorAll('a#img1, a#img2').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault(); img.src=a.querySelector('img').src; img.alt=a.querySelector('img').alt; lb.style.display='flex';});
+});
+document.getElementById('close').onclick=(e)=>{e.preventDefault(); lb.style.display='none';};
+lb.addEventListener('click',e=>{ if(e.target===lb) lb.style.display='none'; });
+</script>
 </body></html>
+
