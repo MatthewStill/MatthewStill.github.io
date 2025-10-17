@@ -40,9 +40,9 @@
   .avatar{width:140px;height:auto;border-radius:14px;display:block;object-fit:cover;image-rendering:auto}
   .contact{display:flex;gap:10px;flex-wrap:wrap}
 
-  /* skills section */
+  /* skills section (match .card color) */
   .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .skill-card{background:#0b1220;border:1px solid #334155;border-radius:12px;padding:12px}
+  .skill-card{background:var(--card);border:1px solid #334155;border-radius:12px;padding:12px}
   .skill-card h4{margin:0 0 6px;font-size:16px}
   .pills{display:flex;flex-wrap:wrap;gap:6px}
   .pill{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid #334155;color:var(--text)}
@@ -96,6 +96,7 @@
           </div>
           <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span></div>
         </article>
+
         <article class="card project">
           <div>
             <h3><a href="/projects/coolcreme/">CoolCrème Plant-Based Ice Cream Launch</a></h3>
@@ -104,6 +105,7 @@
           </div>
           <div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Market Analysis</span></div>
         </article>
+
         <article class="card project">
           <div>
             <h3><a href="/projects/ops-cost/">Store Ops Cost Reduction</a></h3>
@@ -112,10 +114,20 @@
           </div>
           <div class="tags"><span class="tag">Excel</span><span class="tag">Process Improvement</span><span class="tag">Ops</span></div>
         </article>
+
+        <!-- New 4th project -->
+        <article class="card project">
+          <div>
+            <h3><a href="/projects/forecasting/">Sales Forecasting & Scenario Planning</a></h3>
+            <div class="meta">Python · Excel | 2025</div>
+            <p>Placeholder case study showing time-series forecasting and what-if scenarios for inventory and staffing decisions. Replace with your real content later.</p>
+          </div>
+          <div class="tags"><span class="tag">Forecasting</span><span class="tag">Python</span><span class="tag">Excel</span></div>
+        </article>
       </div>
     </section>
 
-    <!-- New Skills -->
+    <!-- Skills -->
     <section class="section">
       <h2>Skills</h2>
       <div class="skills-grid">
@@ -142,55 +154,51 @@
       </div>
     </section>
 
-  <section class="section">
-
     <!-- Education -->
-    <section class="section card">
+    <section class="section">
       <h2>Education</h2>
-      <p>Arizona State University — B.A. Business Administration, <span class="sub">Magna Cum Laude, GPA 3.77</span></p>
-      <p>Applied Business Data Analytics Certificate — <span class="sub">GPA 3.94</span></p>
+      <div class="card">
+        <p>Arizona State University — B.A. Business Administration, <span class="sub">Magna Cum Laude, GPA 3.77</span></p>
+        <p>Applied Business Data Analytics Certificate — <span class="sub">GPA 3.94</span></p>
+      </div>
     </section>
     
-  <!-- Experience -->
-  <section class="section">
-    <h2>Experience</h2>
-    <div class="card">
-      <div class="list">
-        <div class="item">
-          <h4>Starbucks — Shift Supervisor <span class="sub">(Mar 2022–Present)</span></h4>
-          <p class="sub">Houston, TX</p>
-          <ul>
-            <li>Oversaw all aspects of store operations and directed a 30-member team, including cashiers, stock associates, and shift leaders.</li>
-            <li>Implemented scheduling, training, and performance management strategies that ensured smooth daily operations (~$12K/day).</li>
-            <li>Used Excel and POS reporting to analyze labor, supply, and inventory; identified cost-saving opportunities.</li>
-            <li>Reduced operating costs by 12% while maintaining service quality.</li>
-            <li>Maintained audit-ready documentation and compliance (EcoSure, Health Dept.).</li>
-            <li>Forecasted staffing and inventory based on trends and seasonality; adjusted deployment for peak hours.</li>
-          </ul>
-        </div>
-  
-        <div class="item">
-          <h4>Starbucks — Barista Trainer <span class="sub">(Aug 2021–Feb 2022)</span></h4>
-          <p class="sub">Houston, TX</p>
-          <ul>
-            <li>Trained and coached new baristas on beverage standards, customer service, and procedures.</li>
-            <li>Improved onboarding efficiency and team consistency through structured instruction and feedback.</li>
-          </ul>
-        </div>
-  
-        <div class="item">
-          <h4>Starbucks — Barista <span class="sub">(Aug 2018–Jul 2021)</span></h4>
-          <p class="sub">Houston, TX</p>
-          <ul>
-            <li>Delivered high-quality service in a fast-paced environment while maintaining speed and accuracy.</li>
-            <li>Resolved customer issues promptly to preserve satisfaction and throughput.</li>
-          </ul>
+    <!-- Experience -->
+    <section class="section">
+      <h2>Experience</h2>
+      <div class="card">
+        <div class="list">
+          <div class="item">
+            <h4>Starbucks — Shift Supervisor <span class="sub">(Mar 2022–Present)</span></h4>
+            <p class="sub">Houston, TX</p>
+            <ul>
+              <li>Oversaw all aspects of store operations and directed a 30-member team, including cashiers, stock associates, and shift leaders.</li>
+              <li>Implemented scheduling, training, and performance management strategies that ensured smooth daily operations (~$12K/day).</li>
+              <li>Used Excel and POS reporting to analyze labor, supply, and inventory; identified cost-saving opportunities.</li>
+              <li>Reduced operating costs by 12% while maintaining service quality.</li>
+              <li>Maintained audit-ready documentation and compliance (EcoSure, Health Dept.).</li>
+              <li>Forecasted staffing and inventory based on trends and seasonality; adjusted deployment for peak hours.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h4>Starbucks — Barista Trainer <span class="sub">(Aug 2021–Feb 2022)</span></h4>
+            <p class="sub">Houston, TX</p>
+            <ul>
+              <li>Trained and coached new baristas on beverage standards, customer service, and procedures.</li>
+              <li>Improved onboarding efficiency and team consistency through structured instruction and feedback.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h4>Starbucks — Barista <span class="sub">(Aug 2018–Jul 2021)</span></h4>
+            <p class="sub">Houston, TX</p>
+            <ul>
+              <li>Delivered high-quality service in a fast-paced environment while maintaining speed and accuracy.</li>
+              <li>Resolved customer issues promptly to preserve satisfaction and throughput.</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-
+    </section>
 
     <section class="section card">
       <h2>Contact</h2>
