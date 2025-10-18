@@ -21,21 +21,14 @@ h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(-
 .gallery .shot{grid-column:span 6;cursor:pointer}
 .gallery img{width:100%;border-radius:10px;display:block;transition:transform .2s ease}
 .gallery img:hover{transform:scale(1.02)}
+.gallery .cap{font-size:13px;color:var(--muted);margin-top:6px}
 @media (max-width:900px){.gallery .shot{grid-column:span 12}}
 .footer{font-size:14px;color:var(--muted);padding:24px 0}
 
-/* Lightbox overlay */
-#lightbox{
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;
-  z-index:9999;padding:20px;
-}
-#lightbox img{max-width:95%;max-height:95%;border-radius:12px}
-#lightbox:target{display:flex}
-#close{
-  position:fixed;top:20px;right:30px;color:#fff;font-size:32px;font-weight:bold;
-  text-decoration:none;cursor:pointer;z-index:10000;
-}
+/* Lightbox */
+#lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+#lightbox img{max-width:95%;max-height:95%;border-radius:12px;border:1px solid #233045}
+#close{position:fixed;top:20px;right:30px;color:#fff;font-size:32px;font-weight:bold;text-decoration:none;cursor:pointer;z-index:10000}
 </style>
 </head><body>
 <div class="navbar"><div class="inner">
@@ -48,32 +41,57 @@ h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(-
     <h1>Profitability Analysis Dashboard</h1>
     <p>Power BI · KPIs · DAX | 2025</p>
     <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span></div>
-    <p>This page displays static images of each tab in the Power BI report. Click any image to enlarge it.</p>
+    <p>Static images of each tab in the Power BI report. Click any image to enlarge.</p>
   </section>
 
+  <!-- Methods & Findings -->
+  <section class="section card">
+    <h2>Method & Findings</h2>
+    <ul>
+      <li><strong>Data:</strong> Sales, units, and COGS by product and segment; calendar table for time intelligence.</li>
+      <li><strong>Modeling:</strong> DAX measures for <em>Sales</em>, <em>COGS</em>, <em>Profit</em>, and <em>Margin %</em>; segment and product drilldowns; YTD/MTD comparisons.</li>
+      <li><strong>Diagnostics:</strong> Outlier scan for negative-profit rows; variance vs prior period; contribution analysis by segment and top SKUs.</li>
+      <li><strong>Key findings:</strong> The <em>Enterprise</em> segment shows persistent negative profit driven by a few low-margin products and discounts; other segments remain positive.</li>
+      <li><strong>Actions:</strong> Remove or re-price loss-making SKUs in Enterprise, reduce discount depth, and shift marketing to higher-margin products.</li>
+    </ul>
+  </section>
+
+  <!-- Gallery -->
   <section class="section grid gallery">
     <article class="card shot">
       <h3>Tab 1 — Overview</h3>
-      <a href="#img1"><img src="SA2_Image1.jpg" alt="Profitability Overview"></a>
+      <a href="#img1"><img src="SA2_Image1.jpg" alt="Profitability overview with question framing"></a>
+      <div class="cap">Scope, question, and KPIs used in the analysis.</div>
     </article>
     <article class="card shot">
       <h3>Tab 2 — Sales Performance</h3>
-      <a href="#img2"><img src="SA2_Image2.jpg" alt="Sales Performance"></a>
+      <a href="#img2"><img src="SA2_Image2.jpg" alt="Sales performance detail view"></a>
+      <div class="cap">Transactional table for drill, filters for time, segment, and product.</div>
     </article>
     <article class="card shot">
       <h3>Tab 3 — Cost Breakdown</h3>
-      <a href="#img3"><img src="SA2_Image3.jpg" alt="Cost Breakdown"></a>
+      <a href="#img3"><img src="SA2_Image3.jpg" alt="COGS and profit by segment visuals"></a>
+      <div class="cap">COGS vs Sales by segment plus product mix visuals.</div>
     </article>
     <article class="card shot">
       <h3>Tab 4 — Summary & Insights</h3>
-      <a href="#img4"><img src="SA2_Image4.jpg" alt="Summary and Insights"></a>
+      <a href="#img4"><img src="SA2_Image4.jpg" alt="Summary findings and segment profitability chart"></a>
+      <div class="cap">Enterprise highlighted as negative; recommendations summarized.</div>
     </article>
+  </section>
+
+  <!-- Optional downloads -->
+  <section class="section grid">
+    <div class="card">
+      <h2>Downloads</h2>
+      <p><a href="Profitability_Report.pbix" download>Power BI (.pbix)</a></p>
+    </div>
   </section>
 
   <div class="footer">© <script>document.write(new Date().getFullYear())</script> Matthew Still</div>
 </main>
 
-<!-- Lightbox popups -->
+<!-- Lightbox -->
 <div id="lightbox">
   <a id="close" href="#">×</a>
   <img id="lightbox-img" src="" alt="Expanded view">
@@ -93,5 +111,3 @@ document.getElementById('close').addEventListener('click',()=>lightbox.style.dis
 lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.style.display='none';});
 </script>
 </body></html>
-
-
