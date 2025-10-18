@@ -1,16 +1,37 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CoolCrème Launch — Matthew Still</title>
+<title>CoolCrème — Tableau Project</title>
 <link rel="icon" href="../../favicon.ico">
-<style>/* same CSS as above */*{box-sizing:border-box}:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
 html,body{margin:0;padding:0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
-a{color:var(--brand)}a:hover{text-decoration:underline}.container{max-width:1100px;margin:0 auto;padding:32px 20px}
-.navbar{position:sticky;top:0;background:#0b1220cc;border-bottom:1px solid #233045}.navbar .inner{display:flex;justify-content:space-between;padding:12px 20px}
-.brand{font-weight:700}.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:var(--text)}
-.grid{display:grid;gap:16px}.card{background:var(--card);border:1px solid #233045;border-radius:16px;padding:24px}
-h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(--muted);margin:8px 0}.section{margin-top:32px}
-.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
+a{color:var(--brand)}a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px}
+.navbar{position:sticky;top:0;background:#0b1220cc;border-bottom:1px solid #233045}
+.navbar .inner{display:flex;justify-content:space-between;padding:12px 20px}
+.brand{font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:var(--text)}
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid #233045;border-radius:16px;padding:24px}
+.section{margin-top:32px}
+h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}
+p{color:var(--muted);margin:8px 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
 .footer{font-size:14px;color:var(--muted);padding:24px 0}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:auto;border-radius:12px;border:1px solid #233045;cursor:pointer;display:block}
+.cap{font-size:13px;color:var(--muted);margin-top:6px}
+@media(max-width:800px){.gallery{grid-template-columns:1fr}}
+
+/* lightbox */
+#lightbox{position:fixed;inset:0;background:rgba(3,6,12,.9);display:none;align-items:center;justify-content:center;z-index:50}
+#lightbox img{max-width:min(96vw,1400px);max-height:92vh;border-radius:12px;border:1px solid #233045}
+#lightbox .close{position:absolute;top:16px;right:20px;font-size:28px;line-height:1;cursor:pointer;color:#e5e7eb}
 </style>
 </head><body>
 <div class="navbar"><div class="inner">
@@ -20,31 +41,76 @@ h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(-
 
 <main class="container">
   <section class="card">
-    <h1>CoolCrème Plant-Based Ice Cream Launch</h1>
-    <p>Tableau · Power BI | 2025</p>
-    <div class="tags"><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Market Analysis</span></div>
-    <p>Survey analysis, pricing model, elasticity and sentiment dashboards. Delivered go-to-market recommendations.</p>
+    <h1>CoolCrème — Tableau Analysis</h1>
+    <p>Tableau · Survey analytics · Pricing & sentiment | 2025</p>
+    <div class="tags"><span class="tag">Tableau</span><span class="tag">Data Prep</span><span class="tag">Dashboards</span></div>
+    <p>Interactive Tableau work exploring pricing sensitivity, feature preferences, and sentiment for a plant-based ice-cream concept.</p>
   </section>
 
   <section class="section card" style="height:720px">
     <h2>Interactive Dashboard</h2>
-    <!-- Replace with Tableau Public embed -->
+    <!-- Replace with your Tableau Public URL -->
     <iframe src="https://public.tableau.com/views/WORKBOOK/SHEET?:showVizHome=no&:embed=true" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <section class="section card">
+    <h2>Method & Findings</h2>
+    <ul>
+      <li><strong>Data prep:</strong> Cleaned survey responses, normalized scales, built segments (age/diet), extracted text for themes.</li>
+      <li><strong>Modeling:</strong> Calculated fields for intent score, WTP bands, NPS, and attribute importance; parameters for price and flavor bundles.</li>
+      <li><strong>Diagnostics:</strong> Cohort comparisons, price-step sensitivity, and contribution of attributes to intent.</li>
+      <li><strong>Key findings:</strong> Intent peaks at a mid-tier price; dairy-free cohort over-indexes on texture/protein; two flavors drive most positive intent.</li>
+      <li><strong>Actions:</strong> Launch mid-tier, lead with top flavors, message protein/texture, A/B test bundles for dairy-free buyers.</li>
+    </ul>
+  </section>
+
+  <section class="section card">
+    <h2>Dashboards</h2>
+    <div class="gallery">
+      <figure>
+        <img src="cc_tab1.jpg" alt="Overview — KPIs and filter controls" loading="lazy">
+        <figcaption class="cap">Overview: sample profile, KPIs, and global filters.</figcaption>
+      </figure>
+      <figure>
+        <img src="cc_tab2.jpg" alt="Pricing — intent vs price curve" loading="lazy">
+        <figcaption class="cap">Pricing: intent vs price and elasticity bands.</figcaption>
+      </figure>
+      <figure>
+        <img src="cc_tab3.jpg" alt="Recommendations — go-to-market summary" loading="lazy">
+        <figcaption class="cap">Recommendations: price, flavor set, and messaging.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="section grid">
     <div class="card">
-      <h2>Images</h2>
-      <p><img src="coolcreme_1.png" alt="Elasticity view" style="max-width:100%;border-radius:10px"></p>
-      <p><img src="coolcreme_2.png" alt="Sentiment view" style="max-width:100%;border-radius:10px"></p>
-    </div>
-    <div class="card">
-      <h2>Download</h2>
-      <p><a href="CoolCreme.twbx" download>Download .twbx</a></p>
-      <p><a href="coolcreme_summary.pdf" download>One-pager PDF</a></p>
+      <h2>Downloads</h2>
+      <p><a href="CIS310_AT3-1_STILL.twbx" download>Tableau workbook (.twbx)</a></p>
+      <p><a href="coolcreme_data_dictionary.pdf" target="_blank" rel="noopener">Data dictionary</a></p>
     </div>
   </section>
 
   <div class="footer">© <script>document.write(new Date().getFullYear())</script> Matthew Still</div>
 </main>
+
+<!-- Lightbox -->
+<div id="lightbox" aria-hidden="true">
+  <span class="close" aria-label="Close">×</span>
+  <img alt="">
+</div>
+<script>
+(function(){
+  const box=document.getElementById('lightbox');
+  const img=box.querySelector('img');
+  const close=box.querySelector('.close');
+  function open(src,alt){img.src=src;img.alt=alt||'';box.style.display='flex';box.setAttribute('aria-hidden','false');}
+  function hide(){box.style.display='none';box.setAttribute('aria-hidden','true');img.src='';}
+  document.querySelectorAll('.gallery img').forEach(el=>{
+    el.addEventListener('click',()=>open(el.src,el.alt));
+  });
+  close.addEventListener('click',hide);
+  box.addEventListener('click',e=>{if(e.target===box)hide();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+</script>
 </body></html>
