@@ -20,12 +20,18 @@ p{color:var(--muted);margin:8px 0}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
 .footer{font-size:14px;color:var(--muted);padding:24px 0}
+
 /* slides grid */
 .shots{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .shots figure{margin:0}
-.shots img{width:100%;height:auto;border-radius:12px;border:1px solid #233045}
+.shots img{width:100%;height:auto;border-radius:12px;border:1px solid #233045;cursor:pointer}
 .figcap{font-size:13px;color:var(--muted);margin-top:6px}
 @media(max-width:800px){.shots{grid-template-columns:1fr}}
+
+/* lightbox */
+#lightbox{position:fixed;inset:0;background:rgba(3,6,12,.9);display:none;align-items:center;justify-content:center;z-index:50}
+#lightbox img{max-width:min(96vw,1400px);max-height:92vh;border-radius:12px;border:1px solid #233045}
+#lightbox .close{position:absolute;top:16px;right:20px;font-size:28px;line-height:1;cursor:pointer;color:#e5e7eb}
 </style>
 </head><body>
 <div class="navbar"><div class="inner">
@@ -40,16 +46,17 @@ p{color:var(--muted);margin:8px 0}
     <div class="tags">
       <span class="tag">Excel</span><span class="tag">Process Improvement</span><span class="tag">Ops</span>
     </div>
-    <p>Assessed financial and operational risks for a local coffee shop. Modeled potential losses, mitigation costs, and ROI from preventive measures using historic POS data and scenario forecasting.</p>
+    <p>Assessed financial and operational risks for a local coffee shop. Quantified loss exposure and ROI of mitigations using POS history and scenario forecasting.</p>
   </section>
 
   <section class="section card">
     <h2>Method & Findings</h2>
     <ul>
-      <li><strong>Data:</strong> POS exports, labor schedules, and inventory counts.</li>
-      <li><strong>Analysis:</strong> PivotTables, what-if scenarios, and basic control charts.</li>
-      <li><strong>Actions:</strong> schedule tuning, waste reduction, tighter reorder points.</li>
-      <li><strong>Result:</strong> ~12% operating cost reduction while maintaining service levels.</li>
+      <li><strong>Framework:</strong> Risk register with Likelihood × Impact scoring; heat-map to prioritize top 6 risks.</li>
+      <li><strong>Key risks identified:</strong> peak-hour understaffing, milk/pastry waste, stockouts on fast movers, training defects, POS cash variance, audit/compliance slip.</li>
+      <li><strong>Analysis:</strong> PivotTables for hour-of-day labor vs sales, control charts for waste variance, reorder-point what-ifs, and basic ROI for mitigations.</li>
+      <li><strong>Mitigations:</strong> shift rebalancing, batch sizing for pastries, par levels with safety stock, refresher training, and cash-handling checks.</li>
+      <li><strong>Outcome:</strong> ~12% operating cost reduction while holding service levels; lower variance in waste and fewer stockouts.</li>
     </ul>
   </section>
 
@@ -57,27 +64,27 @@ p{color:var(--muted);margin:8px 0}
     <h2>Slides</h2>
     <div class="shots">
       <figure>
-        <img src="slide1.png" alt="Coffee Shop Risk Analysis slide 1 — Overview" loading="lazy">
+        <img src="slide1.jpg" alt="Overview and objectives" loading="lazy" data-full="slide1.jpg">
         <figcaption class="figcap">Overview and objectives.</figcaption>
       </figure>
       <figure>
-        <img src="slide2.png" alt="Coffee Shop Risk Analysis slide 2 — Risk register" loading="lazy">
-        <figcaption class="figcap">Risk register with likelihood × impact.</figcaption>
+        <img src="slide2.jpg" alt="Risk register and heat-map" loading="lazy" data-full="slide2.jpg">
+        <figcaption class="figcap">Risk register with heat-map.</figcaption>
       </figure>
       <figure>
-        <img src="slide3.png" alt="Coffee Shop Risk Analysis slide 3 — Labor vs sales" loading="lazy">
-        <figcaption class="figcap">Labor vs. sales alignment and peaks.</figcaption>
+        <img src="slide3.jpg" alt="Labor vs sales analysis" loading="lazy" data-full="slide3.jpg">
+        <figcaption class="figcap">Labor vs sales alignment.</figcaption>
       </figure>
       <figure>
-        <img src="slide4.png" alt="Coffee Shop Risk Analysis slide 4 — Waste trend" loading="lazy">
-        <figcaption class="figcap">Waste trend and target bands.</figcaption>
+        <img src="slide4.jpg" alt="Waste trend control chart" loading="lazy" data-full="slide4.jpg">
+        <figcaption class="figcap">Waste trend and bands.</figcaption>
       </figure>
       <figure>
-        <img src="slide5.png" alt="Coffee Shop Risk Analysis slide 5 — Inventory controls" loading="lazy">
+        <img src="slide5.jpg" alt="Inventory reorder points" loading="lazy" data-full="slide5.jpg">
         <figcaption class="figcap">Reorder points and stockouts.</figcaption>
       </figure>
       <figure>
-        <img src="slide6.png" alt="Coffee Shop Risk Analysis slide 6 — ROI of mitigations" loading="lazy">
+        <img src="slide6.jpg" alt="ROI summary of mitigations" loading="lazy" data-full="slide6.jpg">
         <figcaption class="figcap">ROI and savings summary.</figcaption>
       </figure>
     </div>
@@ -94,4 +101,26 @@ p{color:var(--muted);margin:8px 0}
 
   <div class="footer">© <script>document.write(new Date().getFullYear())</script> Matthew Still</div>
 </main>
+
+<!-- Lightbox -->
+<div id="lightbox" aria-hidden="true">
+  <span class="close" aria-label="Close">×</span>
+  <img alt="">
+</div>
+
+<script>
+(function(){
+  const box = document.getElementById('lightbox');
+  const img = box.querySelector('img');
+  const close = box.querySelector('.close');
+  function open(src, alt){ img.src = src; img.alt = alt || ''; box.style.display = 'flex'; box.setAttribute('aria-hidden','false'); }
+  function hide(){ box.style.display = 'none'; box.setAttribute('aria-hidden','true'); img.src=''; }
+  document.querySelectorAll('.shots img').forEach(el=>{
+    el.addEventListener('click', ()=> open(el.dataset.full || el.src, el.alt));
+  });
+  close.addEventListener('click', hide);
+  box.addEventListener('click', e=>{ if(e.target===box) hide(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') hide(); });
+})();
+</script>
 </body></html>
