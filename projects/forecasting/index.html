@@ -55,4 +55,28 @@ img{width:100%;border-radius:12px;display:block;cursor:pointer;border:1px solid 
       <h2>Page 1 — Location & Frequency</h2>
       <figure>
         <a href="#" id="img1"><img src="wildlife1.jpg" alt="Location & Frequency: state heatmap, time-of-day, yearly strikes, and top airports"></a>
-        <figcaption class="figcap">State heatmap with time-of-day distri
+        <figcaption class="figcap">State heatmap with time-of-day distribution, yearly trend, species mix, and top airports by strikes.</figcaption>
+      </figure>
+    </article>
+
+    <article class="card shot">
+      <h2>Page 2 — Cost & Damage</h2>
+      <figure>
+        <a href="#" id="img2"><img src="wildlife2.jpg" alt="Cost & Damage: airport cost leaders, bubble map by state, damage share, and yearly cost trend"></a>
+        <figcaption class="figcap">Airport leaders by total cost, bubble map by state cost, damage vs no-damage share, and yearly cost with trendline.</figcaption>
+      </figure>
+    </article>
+  </section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox"><a id="close" href="#">×</a><img id="lbimg" alt=""></div>
+<script>
+const lb=document.getElementById('lightbox'), img=document.getElementById('lbimg');
+document.querySelectorAll('a#img1, a#img2').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault(); img.src=a.querySelector('img').src; img.alt=a.querySelector('img').alt; lb.style.display='flex';});
+});
+document.getElementById('close').onclick=(e)=>{e.preventDefault(); lb.style.display='none';};
+lb.addEventListener('click',e=>{ if(e.target===lb) lb.style.display='none'; });
+</script>
+</body></html>
