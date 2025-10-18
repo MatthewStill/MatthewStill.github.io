@@ -1,16 +1,31 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Store Ops Cost Reduction — Matthew Still</title>
+<title>Coffee Shop Risk Analysis — Matthew Still</title>
 <link rel="icon" href="../../favicon.ico">
-<style>/* same CSS as above */*{box-sizing:border-box}:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--brand:#38bdf8}
 html,body{margin:0;padding:0;font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
-a{color:var(--brand)}a:hover{text-decoration:underline}.container{max-width:1100px;margin:0 auto;padding:32px 20px}
-.navbar{position:sticky;top:0;background:#0b1220cc;border-bottom:1px solid #233045}.navbar .inner{display:flex;justify-content:space-between;padding:12px 20px}
-.brand{font-weight:700}.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:var(--text)}
-.grid{display:grid;gap:16px}.card{background:var(--card);border:1px solid #233045;border-radius:16px;padding:24px}
-h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(--muted);margin:8px 0}.section{margin-top:32px}
-.tags{display:flex;flex-wrap:wrap;gap:8px}.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
+a{color:var(--brand)}a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px}
+.navbar{position:sticky;top:0;background:#0b1220cc;border-bottom:1px solid #233045}
+.navbar .inner{display:flex;justify-content:space-between;padding:12px 20px}
+.brand{font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:var(--text)}
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid #233045;border-radius:16px;padding:24px}
+h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}
+p{color:var(--muted);margin:8px 0}
+.section{margin-top:32px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
 .footer{font-size:14px;color:var(--muted);padding:24px 0}
+/* slides grid */
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.shots figure{margin:0}
+.shots img{width:100%;height:auto;border-radius:12px;border:1px solid #233045}
+.figcap{font-size:13px;color:var(--muted);margin-top:6px}
+@media(max-width:800px){.shots{grid-template-columns:1fr}}
 </style>
 </head><body>
 <div class="navbar"><div class="inner">
@@ -20,31 +35,60 @@ h1{font-size:36px;margin:0 0 8px}h2{font-size:22px;margin:0 0 10px}p{color:var(-
 
 <main class="container">
   <section class="card">
-    <h1>Store Ops Cost Reduction</h1>
-    <p>Excel · SQL (concepts) | 2024</p>
-    <div class="tags"><span class="tag">Excel</span><span class="tag">Process Improvement</span><span class="tag">Ops</span></div>
-    <p>Analyzed labor, supply, and inventory. Reduced operating costs by 12% while maintaining service levels.</p>
+    <h1>Coffee Shop Risk Analysis</h1>
+    <p>Excel · Scenario modeling | 2024</p>
+    <div class="tags">
+      <span class="tag">Excel</span><span class="tag">Process Improvement</span><span class="tag">Ops</span>
+    </div>
+    <p>Assessed financial and operational risks for a local coffee shop. Modeled potential losses, mitigation costs, and ROI from preventive measures using historic POS data and scenario forecasting.</p>
   </section>
 
   <section class="section card">
     <h2>Method & Findings</h2>
     <ul>
-      <li>Data sources: POS exports, labor schedules, inventory counts.</li>
-      <li>Analysis: PivotTables, what-if scenarios, control charts.</li>
-      <li>Actions: schedule adjustments, waste reduction, reorder points.</li>
+      <li><strong>Data:</strong> POS exports, labor schedules, and inventory counts.</li>
+      <li><strong>Analysis:</strong> PivotTables, what-if scenarios, and basic control charts.</li>
+      <li><strong>Actions:</strong> schedule tuning, waste reduction, tighter reorder points.</li>
+      <li><strong>Result:</strong> ~12% operating cost reduction while maintaining service levels.</li>
     </ul>
+  </section>
+
+  <section class="section card">
+    <h2>Slides</h2>
+    <div class="shots">
+      <figure>
+        <img src="slide1.jpg" alt="Coffee Shop Risk Analysis slide 1 — Overview" loading="lazy">
+        <figcaption class="figcap">Overview and objectives.</figcaption>
+      </figure>
+      <figure>
+        <img src="slide2.jpg" alt="Coffee Shop Risk Analysis slide 2 — Risk register" loading="lazy">
+        <figcaption class="figcap">Risk register with likelihood × impact.</figcaption>
+      </figure>
+      <figure>
+        <img src="slide3.jpg" alt="Coffee Shop Risk Analysis slide 3 — Labor vs sales" loading="lazy">
+        <figcaption class="figcap">Labor vs. sales alignment and peaks.</figcaption>
+      </figure>
+      <figure>
+        <img src="slide4.jpg" alt="Coffee Shop Risk Analysis slide 4 — Waste trend" loading="lazy">
+        <figcaption class="figcap">Waste trend and target bands.</figcaption>
+      </figure>
+      <figure>
+        <img src="slide5.jpg" alt="Coffee Shop Risk Analysis slide 5 — Inventory controls" loading="lazy">
+        <figcaption class="figcap">Reorder points and stockouts.</figcaption>
+      </figure>
+      <figure>
+        <img src="slide6.jpg" alt="Coffee Shop Risk Analysis slide 6 — ROI of mitigations" loading="lazy">
+        <figcaption class="figcap">ROI and savings summary.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="section grid">
     <div class="card">
-      <h2>Images</h2>
-      <p><img src="ops_1.png" alt="Labor vs sales" style="max-width:100%;border-radius:10px"></p>
-      <p><img src="ops_2.png" alt="Waste trend" style="max-width:100%;border-radius:10px"></p>
-    </div>
-    <div class="card">
-      <h2>Download</h2>
-      <p><a href="ops_cost_analysis.xlsx" download>Download Excel</a></p>
+      <h2>Downloads</h2>
+      <p><a href="ops_cost_analysis.xlsx" download>Excel workbook</a></p>
       <p><a href="ops_cost_summary.pdf" download>One-pager PDF</a></p>
+      <p><a href="New%20Coffee%20Shop%20Risk%20Analysis.pptx" download>PowerPoint deck</a></p>
     </div>
   </section>
 
