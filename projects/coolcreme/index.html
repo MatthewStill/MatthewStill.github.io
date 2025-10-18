@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CoolCrème — Tableau Project</title>
+<title>Retail Discount & Margin Analysis — Matthew Still</title>
 <link rel="icon" href="../../favicon.ico">
 <style>
 *{box-sizing:border-box}
@@ -41,26 +41,20 @@ p{color:var(--muted);margin:8px 0}
 
 <main class="container">
   <section class="card">
-    <h1>CoolCrème — Tableau Analysis</h1>
-    <p>Tableau · Survey analytics · Pricing & sentiment | 2025</p>
-    <div class="tags"><span class="tag">Tableau</span><span class="tag">Data Prep</span><span class="tag">Dashboards</span></div>
-    <p>Interactive Tableau work exploring pricing sensitivity, feature preferences, and sentiment for a plant-based ice-cream concept.</p>
-  </section>
-
-  <section class="section card" style="height:720px">
-    <h2>Interactive Dashboard</h2>
-    <!-- Replace with your Tableau Public URL -->
-    <iframe src="https://public.tableau.com/views/WORKBOOK/SHEET?:showVizHome=no&:embed=true" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    <h1>Retail Discount & Margin Analysis (Tableau)</h1>
+    <p>Tableau · Pricing · Margin | 2025</p>
+    <div class="tags"><span class="tag">Tableau</span><span class="tag">Pricing</span><span class="tag">Demand</span></div>
+    <p>Dashboards measuring the relationship between discounts, order activity, and margin, plus weekday demand by category.</p>
   </section>
 
   <section class="section card">
     <h2>Method & Findings</h2>
     <ul>
-      <li><strong>Data prep:</strong> Cleaned survey responses, normalized scales, built segments (age/diet), extracted text for themes.</li>
-      <li><strong>Modeling:</strong> Calculated fields for intent score, WTP bands, NPS, and attribute importance; parameters for price and flavor bundles.</li>
-      <li><strong>Diagnostics:</strong> Cohort comparisons, price-step sensitivity, and contribution of attributes to intent.</li>
-      <li><strong>Key findings:</strong> Intent peaks at a mid-tier price; dairy-free cohort over-indexes on texture/protein; two flavors drive most positive intent.</li>
-      <li><strong>Actions:</strong> Launch mid-tier, lead with top flavors, message protein/texture, A/B test bundles for dairy-free buyers.</li>
+      <li><strong>Data:</strong> Orders with sales, COGS, discount %, product category, and calendar dimensions.</li>
+      <li><strong>Modeling:</strong> Calculated fields for <em>Margin</em>, <em>Avg. Discount</em>, and weekday/category aggregates; parameters for date and category filters.</li>
+      <li><strong>Diagnostics:</strong> Monthly trend of margin vs discount; scatter of orders vs average discount; stacked bars by weekday and category.</li>
+      <li><strong>Findings:</strong> Months with higher average discount align with margin compression; orders rise with discount but gains are not margin-accretive past common levels; weekday demand concentrates mid-week with category mix shifts.</li>
+      <li><strong>Actions:</strong> Tighten discount bands, reserve deeper promos for low-margin-safe categories, and align staffing to mid-week peaks.</li>
     </ul>
   </section>
 
@@ -68,16 +62,16 @@ p{color:var(--muted);margin:8px 0}
     <h2>Dashboards</h2>
     <div class="gallery">
       <figure>
-        <img src="cc_tab1.jpg" alt="Overview — KPIs and filter controls" loading="lazy">
-        <figcaption class="cap">Overview: sample profile, KPIs, and global filters.</figcaption>
+        <img src="tab1.jpg" alt="Monthly trend of average discount vs total margin" loading="lazy">
+        <figcaption class="cap">Monthly margin (bars) with average discount (line).</figcaption>
       </figure>
       <figure>
-        <img src="cc_tab2.jpg" alt="Pricing — intent vs price curve" loading="lazy">
-        <figcaption class="cap">Pricing: intent vs price and elasticity bands.</figcaption>
+        <img src="tab2.jpg" alt="Correlation between orders and average discount" loading="lazy">
+        <figcaption class="cap">Orders vs average discount with reference trend.</figcaption>
       </figure>
       <figure>
-        <img src="cc_tab3.jpg" alt="Recommendations — go-to-market summary" loading="lazy">
-        <figcaption class="cap">Recommendations: price, flavor set, and messaging.</figcaption>
+        <img src="tab3.jpg" alt="Weekday transactions by product category" loading="lazy">
+        <figcaption class="cap">Stacked weekday demand split by category.</figcaption>
       </figure>
     </div>
   </section>
@@ -85,7 +79,7 @@ p{color:var(--muted);margin:8px 0}
   <section class="section grid">
     <div class="card">
       <h2>Downloads</h2>
-      <p><a href="CIS310_AT3-1_STILL.twbx" download>Tableau workbook (.twbx)</a></p>
+      <p><a href="Retail_Discount_Margin.twbx" download>Tableau workbook (.twbx)</a></p>
     </div>
   </section>
 
