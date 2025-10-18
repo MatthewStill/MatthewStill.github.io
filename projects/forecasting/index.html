@@ -14,12 +14,16 @@ a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
 .gallery{grid-template-columns:repeat(12,minmax(0,1fr))}
 .shot{grid-column:span 6}
 @media(max-width:900px){.shot{grid-column:span 12}}
-img{width:100%;border-radius:12px;display:block;cursor:pointer;transition:transform .2s}
-img:hover{transform:scale(1.01)}
+figure{margin:0}
+img{width:100%;border-radius:12px;display:block;cursor:pointer;border:1px solid #233045}
+.figcap{font-size:13px;color:var(--muted);margin-top:6px}
 /* Lightbox */
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
 #lightbox img{max-width:95%;max-height:95%;border-radius:12px}
 #close{position:fixed;top:16px;right:22px;font-size:32px;color:#fff;text-decoration:none}
+.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid #334155;color:var(--text)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.meta{color:var(--muted)}
 </style>
 </head><body>
 <main class="container">
@@ -30,41 +34,25 @@ img:hover{transform:scale(1.01)}
 
   <section class="card">
     <h1>Wildlife Strike Analysis (Power BI)</h1>
-    <p class="meta">Two themed pages: <em>Location & Frequency</em> and <em>Cost & Damage</em>. Each page includes a map plus supporting visuals, per assignment spec (≥2 pages, map on each, 4+ visuals per page).</p>
-    <p>Below are static previews. Click any image to zoom. Optional: include the PDF brief for context.</p>
-    <p><a href="assignment.pdf" target="_blank" rel="noopener">View project brief (PDF)</a></p>
+    <p class="meta">Two report pages: <em>Location & Frequency</em> and <em>Cost & Damage</em>. Each page combines a U.S. map with supporting visuals.</p>
+    <div class="tags"><span class="tag">Power BI</span><span class="tag">Mapping</span><span class="tag">KPI</span></div>
+    <p>Static previews below. Click any image to zoom.</p>
+  </section>
+
+  <section class="card">
+    <h2>Method & Findings</h2>
+    <ul>
+      <li><strong>Data:</strong> FAA wildlife strike records with date, airport, state, time of day, species class, damage indicator, and cost.</li>
+      <li><strong>Modeling:</strong> Measures for total strikes, cost per strike, strikes by class and time of day; page-level filters for state and airport.</li>
+      <li><strong>Visuals:</strong> Filled map and bubble map, bar charts by airport, time-of-day column chart, yearly trend, species share pie, and damage share pie.</li>
+      <li><strong>Findings:</strong> Strikes are mostly bird-related and occur in daytime; counts concentrate in large-traffic states and hubs; 89%+ of cases report no damage, yet a small set of airports drive a large share of total cost; long-run costs show volatility with recent moderation.</li>
+      <li><strong>Actions:</strong> Prioritize bird-hazard mitigation at high-volume hubs, schedule sweeps for daytime peaks, and target airports with outsized cost exposure.</li>
+    </ul>
   </section>
 
   <section class="grid gallery">
     <article class="card shot">
       <h2>Page 1 — Location & Frequency</h2>
-      <a href="#" id="img1"><img src="wildlife1.jpg" alt="Wildlife Strike — Location & Frequency"></a>
-    </article>
-    <article class="card shot">
-      <h2>Page 2 — Cost & Damage</h2>
-      <a href="#" id="img2"><img src="wildlife2.jpg" alt="Wildlife Strike — Cost & Damage"></a>
-    </article>
-  </section>
-
-  <section class="card">
-    <h2>Key Takeaways</h2>
-    <ul>
-      <li>Strikes cluster in large-traffic states and are heavily daytime/bird-driven.</li>
-      <li>Costs are concentrated at a few airports; overall damage incidents are a small share of strikes.</li>
-      <li>Trendline shows year-over-year variability with long-run moderation of total costs.</li>
-    </ul>
-  </section>
-</main>
-
-<!-- Lightbox -->
-<div id="lightbox"><a id="close" href="#">×</a><img id="lbimg" alt=""></div>
-<script>
-const lb=document.getElementById('lightbox'), img=document.getElementById('lbimg');
-document.querySelectorAll('a#img1, a#img2').forEach(a=>{
-  a.addEventListener('click',e=>{e.preventDefault(); img.src=a.querySelector('img').src; img.alt=a.querySelector('img').alt; lb.style.display='flex';});
-});
-document.getElementById('close').onclick=(e)=>{e.preventDefault(); lb.style.display='none';};
-lb.addEventListener('click',e=>{ if(e.target===lb) lb.style.display='none'; });
-</script>
-</body></html>
-
+      <figure>
+        <a href="#" id="img1"><img src="wildlife1.jpg" alt="Location & Frequency: state heatmap, time-of-day, yearly strikes, and top airports"></a>
+        <figcaption class="figcap">State heatmap with time-of-day distri
